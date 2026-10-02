@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f2eee4">
+    <meta name="description" content="Everyday objects with a little more character. Explore the AuraCart edit.">
+    <title>AuraCart — The Everyday Edit</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="announcement">THE EVERYDAY EDIT <span>Thoughtful finds, made for your every day.</span></div>
+
+    <header class="navbar">
+
+        <a class="logo" href="#home" aria-label="AuraCart home">aura<span>cart</span><i>.</i></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="cart" type="button" onclick="toggleCart()" aria-label="Open shopping cart">
+            <span class="cart-label">Your bag</span><span id="cart-count">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <p class="eyebrow"><span></span> GOOD THINGS, WELL CHOSEN</p>
+            <h1>Small things.<br><em>Better days.</em></h1>
+            <p class="hero-copy">Useful, lovely things for wherever the day takes you. Meet your new everyday favourites.</p>
+            <a href="#shop" class="hero-btn">Explore the edit <span aria-hidden="true">↗</span></a>
+            <p class="hero-note">A considered collection for everyday living</p>
+        </div>
+        <div class="hero-art" aria-label="A selection of AuraCart everyday essentials">
+            <div class="hero-stamp">THE<br>GOOD<br>STUFF</div>
+            <div class="hero-photo hero-photo-main"><img src="images/sneakers.jpg" alt="Everyday sneakers from the AuraCart collection"></div>
+            <div class="hero-photo hero-photo-small"><img src="images/smart%20watch.jpg" alt="Smart watch from the AuraCart collection"></div>
+            <span class="hero-caption">THE DAILY ROTATION — NO. 01</span>
+            <span class="hero-spark" aria-hidden="true">✳</span>
+        </div>
+
+    </section>
+
+
+    <!-- SHOP -->
+
+    <section class="shop-section" id="shop">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">A FEW VERY GOOD THINGS</p>
+            <h2>Meet the keepers<span>.</span></h2>
+            <p>Good design, everyday usefulness, and a little bit of joy.</p>
+
+        </div>
+
+
+        <!-- SEARCH AND FILTER -->
+
+        <div class="shop-controls">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search products..."
+                aria-label="Search products"
+            >
+
+            <select id="category">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="fashion">
+                    Fashion
+                </option>
+
+                <option value="electronics">
+                    Electronics
+                </option>
+
+                <option value="accessories">
+                    Accessories
+                </option>
+
+            </select>
+
+            <select id="sort" aria-label="Sort products">
+                <option value="featured">Sort: Featured</option>
+                <option value="price-low">Price: Low to high</option>
+                <option value="price-high">Price: High to low</option>
+                <option value="name">Name: A to Z</option>
+            </select>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+        <div class="product-grid">
+
+
+            <!-- 1. T-SHIRT -->
+
+            <div
+                class="product-card"
+                data-name="Classic T-Shirt"
+                data-category="fashion"
+                data-price="799"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="images/Black%20tshirt.jpg"
+                        alt="Classic T-Shirt"
+                    >
+
+                </div>
+
+                <h3>Classic T-Shirt</h3>
+
+                <p class="price">
+                    ₹799
+                </p>
+
+                <button
+                    onclick="addToCart('Classic T-Shirt', 799)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- 2. SMART WATCH -->
+
+            <div
+                class="product-card"
+                data-name="Smart Watch"
+                data-category="electronics"
+                data-price="2499"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="images/smart%20watch.jpg"
+                        alt="Smart Watch"
+                    >
+
+                </div>
+
+                <h3>Smart Watch</h3>
+
+                <p class="price">
+                    ₹2499
+                </p>
+
+                <button
+                    onclick="addToCart('Smart Watch', 2499)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- 3. HEADPHONES -->
+
+            <div
+                class="product-card"
+                data-name="Wireless Headphones"
+                data-category="electronics"
+                data-price="1999"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="images/headphones.jpg"
+                        alt="Wireless Headphones"
+                    >
+
+                </div>
+
+                <h3>Wireless Headphones</h3>
+
+                <p class="price">
+                    ₹1999
+                </p>
+
+                <button
+                    onclick="addToCart('Wireless Headphones', 1999)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- 4. BACKPACK -->
+
+            <div
+                class="product-card"
+                data-name="Stylish Backpack"
+                data-category="accessories"
+                data-price="1299"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="images/backpack.jpg"
+                        alt="Stylish Backpack"
+                    >
+
+                </div>
+
+                <h3>Stylish Backpack</h3>
+
+                <p class="price">
+                    ₹1299
+                </p>
+
+                <button
+                    onclick="addToCart('Stylish Backpack', 1299)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- 5. SNEAKERS -->
+
+            <div
+                class="product-card"
+                data-name="Classic Sneakers"
+                data-category="fashion"
+                data-price="2199"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="images/sneakers.jpg"
+                        alt="Classic Sneakers"
+                    >
+
+                </div>
+
+                <h3>Classic Sneakers</h3>
+
+                <p class="price">
+                    ₹2199
+                </p>
+
+                <button
+                    onclick="addToCart('Classic Sneakers', 2199)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- 6. PREMIUM WATCH -->
+
+            <div
+                class="product-card"
+                data-name="Premium Watch"
+                data-category="accessories"
+                data-price="899"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="images/watch.jpg"
+                        alt="Premium Watch"
+                    >
+
+                </div>
+
+                <h3>Premium Watch</h3>
+
+                <p class="price">
+                    ₹899
+                </p>
+
+                <button
+                    onclick="addToCart('Premium Watch', 899)"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+        </div>
+        <p class="no-results" id="no-results" hidden>No finds for that one. Try another search.</p>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about-section" id="about">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">A LITTLE ABOUT US</p>
+            <h2>Everyday, a little more considered.</h2>
+
+        </div>
+
+        <p>
+            We believe the things you reach for every day deserve a little thought. AuraCart brings together useful, well-loved essentials across style, tech, and the bits in between.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact-section" id="contact">
+
+        <div class="section-heading">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                Have a question? Feel free to reach out.
+            </p>
+
+        </div>
+
+        <div class="contact-info">
+
+            <a href="mailto:support@auracart.com">support@auracart.com <span aria-hidden="true">↗</span></a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>© 2026 AuraCart</p><a href="#home">Back to top ↑</a>
+
+    </footer>
+
+
+    <!-- CART -->
+
+    <button class="cart-backdrop" type="button" onclick="toggleCart()" aria-label="Close shopping cart"></button>
+    <aside id="cart-panel" class="cart-panel" aria-label="Shopping cart" aria-hidden="true">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button
+                onclick="toggleCart()"
+                class="close-cart"
+                aria-label="Close cart"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div id="cart-items">
+
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <h3>
+                Total: ₹<span id="cart-total">0</span>
+            </h3>
+
+            <button
+                class="checkout-btn"
+                onclick="checkout()"
+            >
+                Checkout
+            </button>
+
+        </div>
+
+    </aside>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
